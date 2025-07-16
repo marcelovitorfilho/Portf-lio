@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: "TikTok Sans", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(0, 0, 92);
+    color: white;
+    padding: 30px;
+    gap: 30px;
+    margin: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    transform: scale(1.01);
+    background-color: rgb(10, 10, 150);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cont-head {
+    max-width: 600px;
+}
+
+h1,
+h2 {
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.parte-sup {
+    background-color: rgb(0, 0, 92);
+    color: white;
+    padding: 60px;
+    margin: 40px auto;
+    border-radius: 10px;
+    max-width: 1000px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.parte-sup:hover {
+    transform: scale(1.01);
+    background-color: rgb(10, 10, 150);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.on1 {
+    background-color: rgb(0, 0, 92);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.on1:hover {
+    transform: scale(1.03);
+    background-color: rgb(10, 10, 150);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.contato-fim {
+    background-color: rgb(0, 0, 92);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px 20px;
+    transition: all 0.3s ease;
+}
+
+.contato-fim:hover {
+    transform: scale(1.01);
+    background-color: rgb(10, 10, 150);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    background-color: rgb(0, 0, 92);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    border: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ddd;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cont-head {
+        padding: 20px;
+    }
+
+    .on1 {
+        width: 90%;
+    }
+
+    .projetos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: auto;
+    padding: 14px;
+    margin: 10px;
+    border-radius: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "TikTok Sans", sans-serif;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.2);
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 92);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
