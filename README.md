@@ -24,6 +24,14 @@ Sistema de simulação de uma cafeteria desenvolvido em Java, aplicando conceito
 ## Contatos
 Telefone: (61) 99991-5999  
 E-mail: marcelovitorfilho@hotmail.com  
-Linkedin: [Veja meu perfil](linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309)  
+<p align="left">
+  <a href="https://github.com/marcelovitorfilho">
+    <img src="https://img.shields.io/badge/GitHub-Perfil-181717?style=flat&logo=github" />
+  </a>
+  <a href="https://www.linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309/">
+    <img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=flat&logo=linkedin&logoColor=white" />
+  </a>
+</p>
+
 
 ### Obrigado por visitar meu perfil! Sinta-se à vontade para explorar os repositórios e entrar em contato.
