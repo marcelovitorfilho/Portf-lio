@@ -1,80 +1,501 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Marcelo Vitor" />
-    <title>Marcelo Vitor - Portfólio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Marcelo Vitor Machado da Silva Filho, estudante de Engenharia de Software na UnB com foco em Java e Python.">
+    <meta name="author" content="Marcelo Vitor Machado da Silva Filho">
+    <meta name="theme-color" content="#0A1128">
+    <title>Marcelo Vitor | Desenvolvedor de Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            document.documentElement.classList.add("js");
+            try {
+                var salvo = localStorage.getItem("tema");
+                var escuro = salvo ? salvo === "escuro" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (escuro) document.documentElement.setAttribute("data-tema", "escuro");
+            } catch (e) {}
+        })();
+    </script>
 </head>
-
 <body>
-    <header>
-        <section class="imgeu">
-            <img src="eu.png" alt="Foto de Marcelo Vitor" />
-        </section>
-        <div class="cont-head">
-            <h1>Marcelo Vitor</h1>
-            <p>Estudante de Engenharia de Software na Universidade de Brasília (UnB)</p>
-            <p>Desenvolvedor Front-End com conhecimento em HTML e CSS, e noções básicas de Java e JavaScript.</p>
-        </div>
+    <a class="skip-link" href="#sobre">Ir para o conteúdo</a>
+    <div class="progresso" id="progresso" aria-hidden="true"></div>
+
+    <header class="cabecalho" id="topo">
+        <nav class="nav" aria-label="Navegação principal">
+            <a href="#topo" class="logo">Marcelo<span>.dev</span></a>
+            <ul class="nav-links" id="menuLinks">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#trajetoria">Trajetória</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato" class="nav-cta">Contato</a></li>
+            </ul>
+            <div class="nav-acoes">
+                <button class="paleta-btn" id="abrirPaleta" type="button" aria-label="Abrir busca de comandos">
+                    <span aria-hidden="true">⌕</span><span class="paleta-texto">Buscar</span><kbd>Ctrl K</kbd>
+                </button>
+                <button class="tema-toggle" id="temaToggle" type="button" aria-label="Alternar tema claro/escuro">
+                    <span class="icone-lua" aria-hidden="true">☾</span>
+                    <span class="icone-sol" aria-hidden="true">☀</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLinks">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <section class="parte-sup">
-        <h1>Sobre mim</h1>
-        <p>Sou um estudante esforçado, apaixonado por desenvolvimento web com foco em CSS, HTML e Java. Atualmente
-            estudo Java em nível intermediário.</p>
-        <p>Atualmente, eu curso Engenharia de Software na UnB. Tenho experiência com prototipação no Figma, incluindo
-            reformulações de
-            interfaces e protótipos de baixa fidelidade.</p>
-    </section>
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-grade" aria-hidden="true"></div>
+            <div class="hero-conteudo">
+                <div class="hero-texto">
+                    <div class="hero-foto">
+                        <img src="foto.jpg" alt="Foto de Marcelo Vitor Machado da Silva Filho" width="150" height="150">
+                    </div>
+                    <p class="status"><span class="ponto" aria-hidden="true"></span>Aberto a oportunidades e colaborações</p>
+                    <h1>Marcelo Vitor Machado da Silva Filho</h1>
+                    <p class="hero-cargo">Estudante de Engenharia de Software · <span>UnB</span></p>
+                    <p class="hero-desc">
+                        Foco em <strong>Java</strong> e imersão crescente em <strong>Python</strong>.
+                        Também trabalho com HTML e CSS no front-end e uso Linux (Ubuntu), terminal e Git/GitHub via SSH no dia a dia.
+                        Participo do projeto Makers do AI Lab, o Laboratório de IA da UnB.
+                    </p>
+                    <div class="botoes">
+                        <a class="botao botao-primario" href="#projetos">Ver projetos</a>
+                        <a class="botao botao-secundario" href="#contato">Entrar em contato</a>
+                    </div>
+                </div>
 
-    <section class="projetos">
-        <div class="on1">
-            <h2>Projeto ConectLab</h2>
-            <p>Projeto de website para projeto de extensão fictício que serviria para consultas e analises de exames
-                virtualmente
-                por médicos
-                especialistas. Feito apenas com HTML e CSS</p>
-            <a href="https://marcelovitorfilho.github.io/ConectLab/" target="_blank"><button>Veja o
-                    projeto</button></a>
-        </div>
-        <div class="on1">
-            <h2>Projeto <br>E-book</h2>
-            <p>Projeto de Website feito apenas para fins avaliativos e didáticos de site feito usando HTML, CSS e
-                JavaScript. Um E-book contando sobre minha vida com uma opção de compra ao fim.</p>
-            <a href="https://marcelovitorfilho.github.io/meu-site-front-end/index.html" target="_blank"><button>Veja o
-                    projeto</button></a>
-        </div>
-        <div class="on1">
-            <h2>Projeto Skoob</h2>
-            <p>Projeto didático feito apenas para faculdade de reformulação do app Skoob de leitura, de forma prática,
-                fácil e mais intuitiva. Realizado no Figma feito para Mobile</p>
-            <a href="https://www.figma.com/design/XJxVlQDFS75DBDCMRkdn2c/Entregar-15-06?node-id=0-1&p=f"
-                target="_blank"><button>Veja o
-                    projeto</button></a>
-        </div>
-    </section>
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal-barra">
+                        <span></span><span></span><span></span>
+                        <em>marcelo@unb: ~</em>
+                    </div>
+                    <div class="terminal-corpo" id="terminal">
+                        <div class="linha cmd">whoami</div>
+                        <div class="linha">marcelo-vitor · estudante de Engenharia de Software (UnB)</div>
+                        <div class="linha cmd">cat stack.txt</div>
+                        <div class="linha">java · python · c · html/css · git · linux · figma</div>
+                        <div class="linha cmd">ls projetos/</div>
+                        <div class="linha">ai-lab-makers/  byte-e-brew/</div>
+                        <div class="linha cmd">echo $STATUS</div>
+                        <div class="linha destaque-verde">aberto a oportunidades</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="contato-fim">
-        <h1>Contato</h1>
-        <p>Para maiores informações ou propostas, entre em contato por:</p>
-        <p>📧 Email: <a href="mailto:marcelovitorfilho@hotmail.com">marcelovitorfilho@hotmail.com</a></p>
-        <p>📱 WhatsApp: <a href="https://wa.me/5561999915999" target="_blank" rel="noopener noreferrer">(61)
-                99991-5999</a></p>
-        <p> LinkedIn: <a href="https://www.linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309"
-                target="_blank" rel="noopener noreferrer">@marcelovitorfilho</a></p>
-    </section>
+        <div class="marquee" aria-label="Tecnologias que utilizo">
+            <div class="marquee-trilho">
+                <ul>
+                    <li>Java</li><li>Python</li><li>C</li><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub</li><li>Linux</li><li>Figma</li><li>Full Stack</li>
+                </ul>
+                <ul aria-hidden="true">
+                    <li>Java</li><li>Python</li><li>C</li><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub</li><li>Linux</li><li>Figma</li><li>Full Stack</li>
+                </ul>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 Marcelo Vitor. Todos os direitos reservados.</p>
+        <section class="secao" id="sobre">
+            <div class="secao-topo reveal">
+                <span class="secao-num">01</span>
+                <h2>Sobre mim</h2>
+            </div>
+            <div class="bento reveal">
+                <div class="bento-texto spot">
+                    <p>Sou um estudante esforçado, com experiência em desenvolvimento web com foco em CSS, HTML, C e Java. Atualmente estudo Java e Python.</p>
+                    <p>Curso Engenharia de Software na UnB. Tenho experiência com prototipação no Figma, incluindo reformulações de interfaces e protótipos de baixa fidelidade, e com projetos orientados a objetos, tendo desenvolvido um sistema completo em Java.</p>
+                    <p>Sou extremamente proativo e busco melhorar constantemente.</p>
+                </div>
+                <div class="bento-tile spot"><strong>UnB</strong><span>Engenharia de Software</span></div>
+                <div class="bento-tile spot"><strong>AI Lab</strong><span>Projeto Makers</span></div>
+                <div class="bento-tile spot"><strong>Java · Python</strong><span>Linguagens de foco</span></div>
+                <div class="bento-tile spot"><strong>Figma</strong><span>Prototipação de interfaces</span></div>
+            </div>
+        </section>
+
+        <section class="secao" id="trajetoria">
+            <div class="secao-topo reveal">
+                <span class="secao-num">02</span>
+                <h2>Trajetória</h2>
+            </div>
+            <ol class="timeline reveal">
+                <li>
+                    <span class="marcador atual" aria-hidden="true"></span>
+                    <div>
+                        <h3>Projeto Makers · AI Lab UnB</h3>
+                        <p class="meta">Atualmente</p>
+                        <p>Desenvolvimento de projetos práticos em equipe com Python no Laboratório de Inteligência Artificial da UnB.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="marcador" aria-hidden="true"></span>
+                    <div>
+                        <h3>Engenharia de Software · Universidade de Brasília</h3>
+                        <p class="meta">Graduação em andamento</p>
+                        <p>Base sólida em programação, estrutura de dados, algoritmos e orientação a objetos.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="marcador" aria-hidden="true"></span>
+                    <div>
+                        <h3>Cafeteria Geek "Byte &amp; Brew"</h3>
+                        <p class="meta">Projeto em Java</p>
+                        <p>Sistema de vendas e fidelidade aplicando programação orientada a objetos.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="secao" id="habilidades">
+            <div class="secao-topo reveal">
+                <span class="secao-num">03</span>
+                <h2>Habilidades e Tecnologias</h2>
+            </div>
+
+            <div class="filtros reveal" role="group" aria-label="Filtrar habilidades">
+                <button type="button" class="filtro ativo" data-filtro="todas" aria-pressed="true">Todas</button>
+                <button type="button" class="filtro" data-filtro="linguagem" aria-pressed="false">Linguagens</button>
+                <button type="button" class="filtro" data-filtro="ferramenta" aria-pressed="false">Ferramentas</button>
+                <button type="button" class="filtro" data-filtro="conceito" aria-pressed="false">Conceitos</button>
+            </div>
+
+            <div class="grid reveal" id="gridHabilidades">
+                <article class="card spot" data-cat="linguagem">
+                    <span class="tag">Linguagem</span>
+                    <h3>Java</h3>
+                    <p>Programação orientada a objetos, criação de códigos e resolução de problemas.</p>
+                </article>
+                <article class="card spot" data-cat="linguagem">
+                    <span class="tag">Linguagem</span>
+                    <h3>Python</h3>
+                    <p>Automação, análise de dados e desenvolvimento de scripts.</p>
+                </article>
+                <article class="card spot" data-cat="linguagem">
+                    <span class="tag">Linguagem</span>
+                    <h3>C</h3>
+                    <p>Estrutura de dados, algoritmos e desenvolvimento de código.</p>
+                </article>
+                <article class="card spot" data-cat="linguagem">
+                    <span class="tag">Linguagem</span>
+                    <h3>HTML e CSS</h3>
+                    <p>Desenvolvimento de interfaces e projetos de front-end.</p>
+                </article>
+                <article class="card spot" data-cat="ferramenta">
+                    <span class="tag">Ferramenta</span>
+                    <h3>Git e GitHub</h3>
+                    <p>Commits, branches, pull requests e autenticação por SSH nos meus repositórios.</p>
+                </article>
+                <article class="card spot" data-cat="ferramenta">
+                    <span class="tag">Ferramenta</span>
+                    <h3>Linux</h3>
+                    <p>Manipulação do terminal e gerenciamento de sistemas (Ubuntu).</p>
+                </article>
+                <article class="card spot" data-cat="ferramenta">
+                    <span class="tag">Ferramenta</span>
+                    <h3>Figma</h3>
+                    <p>Prototipação, reformulações de interfaces e protótipos de baixa fidelidade.</p>
+                </article>
+                <article class="card spot" data-cat="conceito">
+                    <span class="tag">Conceito</span>
+                    <h3>Full Stack Development</h3>
+                    <p>Desenvolvimento de aplicações web, incluindo frontend e backend.</p>
+                </article>
+                <article class="card spot" data-cat="conceito">
+                    <span class="tag">Conceito</span>
+                    <h3>Orientação a Objetos</h3>
+                    <p>Modelagem e implementação de sistemas, aplicadas em um projeto completo em Java.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao" id="projetos">
+            <div class="secao-topo reveal">
+                <span class="secao-num">04</span>
+                <h2>Projetos</h2>
+            </div>
+            <div class="grid grid-projetos reveal">
+                <article class="card card-projeto spot tilt">
+                    <span class="tag">Python · Equipe</span>
+                    <h3>Projeto Makers - AI Lab UnB</h3>
+                    <p>Participação no laboratório de Inteligência Artificial da UnB, desenvolvendo projetos práticos em equipe com Python.</p>
+                    <ul class="chips chips-pequenos"><li>Python</li><li>IA</li><li>Trabalho em equipe</li></ul>
+                </article>
+                <article class="card card-projeto spot tilt">
+                    <span class="tag">Java · POO</span>
+                    <h3>Cafeteria Geek "Byte &amp; Brew"</h3>
+                    <p>Sistema de vendas e fidelidade para uma cafeteria com temática geek, chamada "Byte &amp; Brew".</p>
+                    <ul class="chips chips-pequenos"><li>Java</li><li>Orientação a objetos</li></ul>
+                </article>
+            </div>
+            <p class="mais-projetos reveal">Veja mais no meu <a href="https://github.com/marcelovitorfilho" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
+        </section>
+
+        <section class="secao contato" id="contato">
+            <div class="secao-topo reveal">
+                <span class="secao-num">05</span>
+                <h2>Contato</h2>
+            </div>
+            <p class="contato-texto reveal">Estou à disposição para novas oportunidades e colaborações. Escolha o canal que preferir:</p>
+            <div class="contato-grid reveal">
+                <a class="contato-card spot" href="https://github.com/marcelovitorfilho" target="_blank" rel="noopener noreferrer">
+                    <span class="contato-rotulo">GitHub</span>
+                    <span class="contato-valor">marcelovitorfilho ↗</span>
+                </a>
+                <a class="contato-card spot" href="https://www.linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309" target="_blank" rel="noopener noreferrer">
+                    <span class="contato-rotulo">LinkedIn</span>
+                    <span class="contato-valor">Marcelo Vitor Filho ↗</span>
+                </a>
+                <a class="contato-card spot" href="https://wa.me/5561999915999" target="_blank" rel="noopener noreferrer">
+                    <span class="contato-rotulo">WhatsApp</span>
+                    <span class="contato-valor">Enviar mensagem ↗</span>
+                </a>
+                <div class="contato-card spot">
+                    <span class="contato-rotulo">E-mail</span>
+                    <a class="contato-valor" href="mailto:marcelovitorfilho@hotmail.com">marcelovitorfilho@hotmail.com</a>
+                    <button type="button" class="copiar" id="copiarEmail">Copiar e-mail</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Muito obrigado por acessar meu portfólio! Sinta-se à vontade para me contactar.</p>
+        <p class="rodape-copy">© <span id="ano"></span> Marcelo Vitor Machado da Silva Filho · Dica: pressione <kbd>Ctrl K</kbd> para navegar</p>
     </footer>
-</body>
 
+    <a href="#topo" class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo">↑</a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <dialog class="paleta" id="paleta" aria-label="Busca de comandos">
+        <input type="text" id="paletaBusca" placeholder="Digite um comando ou seção..." autocomplete="off" aria-label="Buscar comando">
+        <ul id="paletaLista" role="listbox"></ul>
+        <p class="paleta-dica">↑ ↓ para navegar · Enter para executar · Esc para fechar</p>
+    </dialog>
+
+    <script>
+        const $ = (s, c = document) => c.querySelector(s);
+        const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+        const reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const semHover = window.matchMedia("(hover: none)").matches;
+
+        const toast = $("#toast");
+        let toastTimer;
+        function avisar(msg) {
+            toast.textContent = msg;
+            toast.classList.add("visivel");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove("visivel"), 2200);
+        }
+
+        const raiz = document.documentElement;
+        function alternarTema() {
+            const escuro = raiz.getAttribute("data-tema") !== "escuro";
+            if (escuro) raiz.setAttribute("data-tema", "escuro");
+            else raiz.removeAttribute("data-tema");
+            try { localStorage.setItem("tema", escuro ? "escuro" : "claro"); } catch (e) {}
+        }
+        $("#temaToggle").addEventListener("click", alternarTema);
+
+        const EMAIL = "marcelovitorfilho@hotmail.com";
+        async function copiarEmail() {
+            try {
+                await navigator.clipboard.writeText(EMAIL);
+                avisar("E-mail copiado!");
+            } catch (e) {
+                avisar(EMAIL);
+            }
+        }
+        $("#copiarEmail").addEventListener("click", copiarEmail);
+
+        const toggle = $("#menuToggle");
+        const menu = $("#menuLinks");
+        function fecharMenu() {
+            menu.classList.remove("aberto");
+            toggle.classList.remove("ativo");
+            toggle.setAttribute("aria-expanded", "false");
+        }
+        toggle.addEventListener("click", () => {
+            const aberto = menu.classList.toggle("aberto");
+            toggle.classList.toggle("ativo", aberto);
+            toggle.setAttribute("aria-expanded", aberto);
+        });
+        $$("a", menu).forEach(a => a.addEventListener("click", fecharMenu));
+        document.addEventListener("keydown", e => { if (e.key === "Escape") fecharMenu(); });
+
+        const progresso = $("#progresso");
+        const voltar = $("#voltarTopo");
+        const cabecalho = $(".cabecalho");
+        function aoRolar() {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            progresso.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + "%";
+            voltar.classList.toggle("visivel", window.scrollY > 600);
+            cabecalho.classList.toggle("rolado", window.scrollY > 10);
+        }
+        window.addEventListener("scroll", aoRolar, { passive: true });
+        aoRolar();
+
+        const links = $$(".nav-links a[href^='#']");
+        const secoes = links.map(l => $(l.getAttribute("href"))).filter(Boolean);
+        const obsNav = new IntersectionObserver(entradas => {
+            entradas.forEach(e => {
+                if (e.isIntersecting) {
+                    links.forEach(l => l.classList.toggle("ativo", l.getAttribute("href") === "#" + e.target.id));
+                }
+            });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        secoes.forEach(s => obsNav.observe(s));
+
+        const obsReveal = new IntersectionObserver((entradas, obs) => {
+            entradas.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add("visivel"); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        $$(".reveal").forEach(el => obsReveal.observe(el));
+
+        const foto = $(".hero-foto img");
+        foto.addEventListener("error", () => {
+            const caixa = $(".hero-foto");
+            foto.remove();
+            caixa.classList.add("sem-foto");
+            caixa.textContent = "MV";
+        });
+        
+        function holofote(el) {
+            el.addEventListener("pointermove", e => {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+                el.style.setProperty("--my", (e.clientY - r.top) + "px");
+            });
+        }
+        $$(".spot, .hero").forEach(holofote);
+
+        if (!reduzir && !semHover) {
+            $$(".tilt").forEach(card => {
+                card.addEventListener("pointermove", e => {
+                    const r = card.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width - 0.5;
+                    const y = (e.clientY - r.top) / r.height - 0.5;
+                    card.style.transform = `perspective(800px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-4px)`;
+                });
+                card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+            });
+        }
+
+        const filtros = $$(".filtro");
+        const cartoes = $$("#gridHabilidades .card");
+        filtros.forEach(btn => btn.addEventListener("click", () => {
+            const alvo = btn.dataset.filtro;
+            filtros.forEach(b => {
+                const ativo = b === btn;
+                b.classList.toggle("ativo", ativo);
+                b.setAttribute("aria-pressed", ativo);
+            });
+            cartoes.forEach(c => {
+                const mostrar = alvo === "todas" || c.dataset.cat === alvo;
+                c.hidden = !mostrar;
+                if (mostrar) { c.classList.remove("entrando"); void c.offsetWidth; c.classList.add("entrando"); }
+            });
+        }));
+
+        (function terminal() {
+            const linhas = $$("#terminal .linha");
+            if (reduzir || !linhas.length) return;
+            const textos = linhas.map(l => l.textContent);
+            linhas.forEach(l => { l.textContent = ""; l.style.visibility = "hidden"; });
+            const cursor = document.createElement("span");
+            cursor.className = "cursor";
+            const dormir = ms => new Promise(r => setTimeout(r, ms));
+            (async () => {
+                await dormir(500);
+                for (let i = 0; i < linhas.length; i++) {
+                    const l = linhas[i];
+                    l.style.visibility = "visible";
+                    l.appendChild(cursor);
+                    if (l.classList.contains("cmd")) {
+                        for (const ch of textos[i]) {
+                            cursor.before(ch);
+                            await dormir(55 + Math.random() * 45);
+                        }
+                        await dormir(350);
+                    } else {
+                        cursor.before(textos[i]);
+                        await dormir(450);
+                    }
+                }
+            })();
+        })();
+
+        const dlg = $("#paleta");
+        const busca = $("#paletaBusca");
+        const lista = $("#paletaLista");
+        const irPara = id => () => { const el = $(id); if (el) el.scrollIntoView({ behavior: reduzir ? "auto" : "smooth" }); };
+        const comandos = [
+            { rotulo: "Ir para Sobre mim", dica: "seção", acao: irPara("#sobre") },
+            { rotulo: "Ir para Trajetória", dica: "seção", acao: irPara("#trajetoria") },
+            { rotulo: "Ir para Habilidades", dica: "seção", acao: irPara("#habilidades") },
+            { rotulo: "Ir para Projetos", dica: "seção", acao: irPara("#projetos") },
+            { rotulo: "Ir para Contato", dica: "seção", acao: irPara("#contato") },
+            { rotulo: "Alternar tema claro/escuro", dica: "tema", acao: alternarTema },
+            { rotulo: "Copiar e-mail", dica: "contato", acao: copiarEmail },
+            { rotulo: "Abrir GitHub", dica: "link", acao: () => window.open("https://github.com/marcelovitorfilho", "_blank", "noopener") },
+            { rotulo: "Abrir LinkedIn", dica: "link", acao: () => window.open("https://www.linkedin.com/in/marcelo-vitor-machado-da-silva-filho-9b7230309", "_blank", "noopener") }
+        ];
+        const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        let visiveis = [], indice = 0;
+
+        function desenhar() {
+            lista.innerHTML = "";
+            visiveis.forEach((c, i) => {
+                const li = document.createElement("li");
+                li.setAttribute("role", "option");
+                li.setAttribute("aria-selected", i === indice);
+                li.className = i === indice ? "sel" : "";
+                li.innerHTML = "<span></span><small></small>";
+                li.firstChild.textContent = c.rotulo;
+                li.lastChild.textContent = c.dica;
+                li.addEventListener("click", () => executar(c));
+                li.addEventListener("pointermove", () => { if (indice !== i) { indice = i; desenhar(); } });
+                lista.appendChild(li);
+            });
+            if (!visiveis.length) lista.innerHTML = "<li class='vazio'>Nenhum comando encontrado</li>";
+        }
+        function filtrar() {
+            const q = norm(busca.value.trim());
+            visiveis = comandos.filter(c => norm(c.rotulo + " " + c.dica).includes(q));
+            indice = 0;
+            desenhar();
+        }
+        function executar(c) { dlg.close(); c.acao(); }
+        function abrirPaleta() {
+            busca.value = "";
+            filtrar();
+            if (!dlg.open) dlg.showModal();
+            busca.focus();
+        }
+        $("#abrirPaleta").addEventListener("click", abrirPaleta);
+        busca.addEventListener("input", filtrar);
+        busca.addEventListener("keydown", e => {
+            if (e.key === "ArrowDown") { e.preventDefault(); indice = (indice + 1) % Math.max(visiveis.length, 1); desenhar(); }
+            else if (e.key === "ArrowUp") { e.preventDefault(); indice = (indice - 1 + visiveis.length) % Math.max(visiveis.length, 1); desenhar(); }
+            else if (e.key === "Enter" && visiveis[indice]) { e.preventDefault(); executar(visiveis[indice]); }
+        });
+        dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+        document.addEventListener("keydown", e => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                dlg.open ? dlg.close() : abrirPaleta();
+            }
+        });
+
+        $("#ano").textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>
